@@ -1,0 +1,17 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.Button {
+  background-color: $mainOrange;
+  color: white;
+  padding: 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $mainGray;
+  }
+
+  @include atSmall {
+  }
+}

@@ -1,0 +1,15 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.HomeProducts {
+  margin-top: 60px;
+
+  .HomeProductsRow {
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  @include atSmall {
+  }
+}

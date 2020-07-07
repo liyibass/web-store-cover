@@ -1,0 +1,48 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.Header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  height: 173px;
+  width: 100%;
+  background: white;
+  // position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // margin-bottom: 5px;
+
+  .brandLogo {
+    font-size: 70px;
+    // background-color: red;
+    // position: absolute;
+    // top: 0;
+    // left: 50%;
+    // transform: translateX(-50%);
+
+    padding: 21px;
+  }
+
+  .cartSection {
+    width: 160px;
+    font-size: 1.43rem;
+    position: absolute;
+    right: 12%;
+    // background-color: gold;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    padding: 16px;
+    i {
+      cursor: pointer;
+    }
+  }
+
+  @include atSmall {
+  }
+}

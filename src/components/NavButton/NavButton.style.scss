@@ -1,0 +1,55 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.NavButton {
+  position: relative;
+  height: 60px;
+  display: inline-block;
+  padding: 22px 10px;
+  cursor: pointer;
+
+  .NavButton-title {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .NavButton-folder {
+    color: $mainDark;
+    font-size: 1rem;
+    position: absolute;
+    display: none;
+    background-color: white;
+
+    width: 160px;
+    left: 0;
+    top: 100%;
+
+    .folderItem {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 6px;
+      padding: 6px;
+
+      border-bottom: 1px $mainGray solid;
+
+      &:hover {
+        color: white;
+        background-color: $mainOrange;
+      }
+    }
+  }
+
+  &:hover {
+    color: white;
+    background-color: $mainOrange;
+
+    .NavButton-folder {
+      display: block;
+    }
+  }
+
+  @include atSmall {
+  }
+}

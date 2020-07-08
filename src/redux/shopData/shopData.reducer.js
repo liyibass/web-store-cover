@@ -6,7 +6,7 @@ import { sortShopDataByCatogory } from "./shopData.utils";
 const initialState = {
   shopData: shopData,
   shopDataList: shopData,
-  showShopData: [],
+  showShopData: { title: "", items: [] },
 };
 
 const shopDataReducer = (state = initialState, action) => {

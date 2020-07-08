@@ -11,7 +11,7 @@ const sortShopDataByCatogory = (shopData, catogory) => {
         if (element.title === catogory.title) {
           console.log(element);
 
-          return element.items;
+          return element;
         }
       }
     }

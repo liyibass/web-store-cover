@@ -1,0 +1,111 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.ProductCardPreview {
+  height: 360px;
+  .ProductCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    font-size: 1rem;
+
+    .ProductPrice {
+      color: $mainOrange;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .ProductImage {
+      height: 250px;
+      width: 100%;
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      opacity: 1;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .ProductDetail {
+      position: absolute;
+      height: 250px;
+      width: 100%;
+      margin: auto;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      opacity: 0;
+
+      .ProductMoreInfoIcon {
+        transition: all 0.3s ease;
+        position: relative;
+        height: 50px;
+        width: 50px;
+        margin: 10px;
+        line-height: 50px;
+
+        border-radius: 10px;
+
+        display: block;
+
+        &-search {
+          color: $mainDarkGray;
+          border: 1px $mainDarkGray solid;
+
+          &:hover {
+            color: white;
+            background-color: $mainDarkGray;
+          }
+        }
+        &-cart {
+          color: white;
+          background-color: $mainOrange;
+          &:hover {
+            background-color: $mainDarkGray;
+          }
+        }
+
+        h5 {
+          // position: absolute;
+          width: 5rem;
+          font-size: 1rem;
+          color: $mainDark;
+          transform: translateX(-20%);
+          opacity: 0;
+
+          // background-color: red;
+        }
+
+        &:hover {
+          h5 {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .ProductImage {
+        opacity: 0.3;
+      }
+      .ProductDetail {
+        opacity: 1;
+      }
+    }
+  }
+  @include atSmall {
+  }
+}

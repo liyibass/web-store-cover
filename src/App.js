@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { EventHandler } from "./scripts/EventHandler";
+// import { EventHandler } from "./scripts/EventHandler";
 
 import "./styles/base/overall.scss";
 import Header from "./components/Header/Header.component";
@@ -8,9 +8,9 @@ import HomePage from "./pages/HomePage/HomePage.component";
 import ProductsPage from "./pages/ProductsPage/productsPage.component";
 
 function App() {
-  useEffect(() => {
-    let ev = new EventHandler();
-  }, []);
+  // useEffect(() => {
+  //   let ev = new EventHandler();
+  // }, []);
   return (
     <div className="App">
       <Header />

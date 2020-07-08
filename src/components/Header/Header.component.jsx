@@ -6,7 +6,9 @@ function Header() {
   return (
     <div className="Header">
       <div className="logoSection">
-        <i className="far fa-eye brandLogo"></i>
+        <a href="/">
+          <i className="far fa-eye brandLogo"></i>
+        </a>
       </div>
       <div className="cartSection">
         <i className="far fa-user"></i>

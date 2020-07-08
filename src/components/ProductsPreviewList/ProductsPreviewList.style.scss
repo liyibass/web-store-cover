@@ -1,0 +1,8 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.ProductsPreviewList {
+  // background: gold;
+  @include atSmall {
+  }
+}

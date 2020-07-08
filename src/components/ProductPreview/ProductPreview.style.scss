@@ -1,0 +1,10 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.ProductPreview {
+  width: 100%;
+  text-align: center;
+  background-color: red;
+  @include atSmall {
+  }
+}

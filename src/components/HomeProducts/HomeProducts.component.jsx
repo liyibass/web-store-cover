@@ -12,7 +12,7 @@ function HomeProducts() {
       <div className="container">
         <Title title="New Arrivals" />
         <div className="HomeProductsRow row">
-          {shopData[3].items.map((item) => {
+          {shopData[0].folder[2].items.map((item) => {
             return <ItemPreview key={item.id} item={item} />;
           })}
         </div>

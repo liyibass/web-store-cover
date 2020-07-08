@@ -13,7 +13,10 @@
     transform: scale(0.8) translateY(50px);
     transition: all 0.3s ease-out;
     opacity: 0.8;
-    border-radius: 10px;
+
+    img {
+      border-radius: 10px;
+    }
   }
 
   .ItemCaption {

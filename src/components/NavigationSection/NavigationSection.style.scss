@@ -1,0 +1,12 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.NavigationSection {
+  height: 44px;
+  width: 100%;
+  border-bottom: 2px $mainLightGray solid;
+
+  margin-bottom: 43px;
+  @include atSmall {
+  }
+}

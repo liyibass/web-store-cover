@@ -1,15 +1,15 @@
 import React from "react";
-import "./homepage.style.scss";
+import "./HomePage.style.scss";
 import ImageCarousel from "../../components/ImageCarousel/ImageCarousel.component";
 import HomeProducts from "../../components/HomeProducts/HomeProducts.component";
 
-function Homepage() {
+function HomePage() {
   return (
-    <div className="homepage">
+    <div className="HomePage">
       <ImageCarousel />
       <HomeProducts />
     </div>
   );
 }
 
-export default Homepage;
+export default HomePage;

@@ -1,17 +1,21 @@
 import React from "react";
 import "./NavButton.style.scss";
+import { Link } from "react-router-dom";
 
 function NavButton({ item }) {
   return (
     <div className="NavButton">
-      <h3 className="NavButton-title">{item.title}</h3>
+      <Link className="NavButton-title" to="/products">
+        {item.title}
+      </Link>
+
       {item.folder ? (
         <div className="NavButton-folder">
           {item.folder.map((subItem) => {
             return (
-              <h3 key={subItem} className="folderItem">
-                {subItem}
-              </h3>
+              <Link key={subItem.id} className="folderItem" to="/products">
+                {subItem.title}
+              </Link>
             );
           })}
         </div>

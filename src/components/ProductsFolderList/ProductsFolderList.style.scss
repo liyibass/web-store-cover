@@ -1,0 +1,53 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.ProductsFolderList {
+  position: relative;
+  z-index: 5;
+  box-shadow: 0 0 3px $mainGray;
+  font-size: 0.8rem;
+
+  .catogory-title {
+    position: relative;
+    z-index: 5;
+    padding: 14px;
+    background: white;
+    border-bottom: 2px $mainLightGray solid;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: $mainLightGray;
+    }
+  }
+
+  .catogory-folder {
+    position: relative;
+    z-index: -1;
+    background: white;
+    margin-left: 10px;
+
+    max-height: 0;
+    transition: all 0.3s ease;
+  }
+
+  .folder-show {
+    .catogory-title {
+      i {
+        transform: scaleY(-1);
+      }
+    }
+    .catogory-folder {
+      z-index: 6;
+      max-height: 800px;
+    }
+  }
+
+  @include atSmall {
+  }
+}

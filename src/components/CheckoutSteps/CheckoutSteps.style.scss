@@ -1,0 +1,54 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.CheckoutSteps {
+  .step-header {
+    font-size: 1rem;
+  }
+
+  .CartContent {
+    display: block;
+
+    .CartList {
+      background: white;
+      border: 3px $mainGray solid;
+      .CartList-header {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background: $mainGray;
+
+        .header-block {
+          width: 20%;
+          text-transform: capitalize;
+          text-align: center;
+          color: $mainDarkGray;
+
+          &:first-child {
+            text-align: center;
+            width: 10%;
+          }
+
+          &:nth-child(2) {
+            text-align: center;
+            width: 40%;
+          }
+
+          &:last-child {
+            width: 8%;
+          }
+        }
+      }
+
+      .CartList-content {
+        min-height: 200px;
+        background: white;
+      }
+    }
+  }
+  @include atSmall {
+  }
+}

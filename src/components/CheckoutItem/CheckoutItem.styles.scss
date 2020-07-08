@@ -1,0 +1,61 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+.CheckoutItem {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 135px;
+  padding: 15px 0;
+  margin-bottom: 15px;
+
+  border-bottom: 1px solid darkgrey;
+
+  font-size: 1rem;
+  color: $mainDark;
+  font-weight: 200;
+
+  .CheckoutItem-details {
+    width: 20%;
+    text-align: center;
+
+    &-quantity {
+      i {
+        cursor: pointer;
+      }
+    }
+
+    &:first-child {
+      text-align: center;
+      width: 10%;
+    }
+    &:nth-child(2) {
+      text-align: center;
+      width: 40%;
+    }
+
+    &:last-child {
+      width: 8%;
+      text-align: center;
+    }
+  }
+
+  .image-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      width: 80%;
+    }
+  }
+
+  .remove-button {
+    cursor: pointer;
+  }
+}

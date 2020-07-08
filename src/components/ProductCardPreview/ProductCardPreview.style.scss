@@ -2,6 +2,8 @@
 @import "../../styles/base/responsiveMixin.scss";
 
 .ProductCardPreview {
+  user-select: none;
+
   height: 360px;
   .ProductCard {
     position: relative;

@@ -9,8 +9,6 @@ const sortShopDataByCatogory = (shopData, catogory) => {
         const element = shopData[i].folder[j];
 
         if (element.title === catogory.title) {
-          console.log(element);
-
           return element;
         }
       }

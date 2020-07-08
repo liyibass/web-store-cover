@@ -2,11 +2,13 @@
 @import "../../styles/base/responsiveMixin.scss";
 
 .Button {
+  user-select: none;
   background-color: $mainOrange;
   color: white;
   padding: 0.8rem;
   border-radius: 10px;
   cursor: pointer;
+  text-align: center;
 
   &:hover {
     background-color: $mainGray;

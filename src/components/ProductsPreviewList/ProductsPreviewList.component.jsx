@@ -6,8 +6,6 @@ import { useSelector } from "react-redux";
 function ProductsPreviewList() {
   const showShopData = useSelector((state) => state.shopData.showShopData);
 
-  console.log(showShopData);
-
   return (
     <div className="ProductsPreviewList col-lg-9">
       <h4>{showShopData.title}</h4>

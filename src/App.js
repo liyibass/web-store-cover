@@ -6,6 +6,7 @@ import Header from "./components/Header/Header.component";
 import { Switch, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage.component";
 import ProductsPage from "./pages/ProductsPage/productsPage.component";
+import CheckoutPage from "./pages/ChectutPage/ChectutPage.component";
 
 function App() {
   // useEffect(() => {
@@ -18,6 +19,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/products" component={ProductsPage} />
+        <Route path="/checkout" component={CheckoutPage} />
       </Switch>
     </div>
   );

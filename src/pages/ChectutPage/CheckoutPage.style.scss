@@ -1,0 +1,10 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.CheckoutPage {
+  background-color: $mainLightGray;
+  height: 100vh;
+  margin-top: 173px;
+  padding-top: 20px;
+  text-align: left;
+}

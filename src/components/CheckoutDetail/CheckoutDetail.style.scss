@@ -1,0 +1,44 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.CheckoutDetail {
+  .detail-block {
+    width: 230px;
+    height: 200px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 1rem;
+
+    p {
+      font-weight: 200;
+      margin: 0;
+    }
+    i {
+      color: $mainDarkGray;
+    }
+
+    .detail-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      // background-color: hotpink;
+      border-bottom: 2px $mainGray solid;
+      padding: 5px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .textOrange {
+        color: $mainOrange;
+      }
+    }
+  }
+
+  @include atSmall {
+  }
+}

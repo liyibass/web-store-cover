@@ -1,0 +1,30 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.SimpleCartList {
+  user-select: none;
+  z-index: 10;
+  position: absolute;
+  background-color: white;
+  right: -50px;
+  width: 300px;
+  min-height: 105px;
+  max-height: 500px;
+
+  padding: 16px;
+
+  font-size: 1rem;
+  text-align: right;
+
+  overflow: scroll;
+
+  border: 2px $mainLightGray solid;
+  display: none;
+
+  &-show {
+    display: block;
+  }
+
+  @include atSmall {
+  }
+}

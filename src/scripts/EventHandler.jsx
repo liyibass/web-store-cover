@@ -5,9 +5,13 @@ export class EventHandler {
     //   document.querySelectorAll(".box")
     // );
     this.mainCatogory = document.querySelectorAll(".mainCatogory");
+
+    this.cartIcon = document.querySelector(".cartIcon");
+    this.simpleCartList = document.querySelector(".SimpleCartList");
     // 執行eventHandler
     // this.boxAppear();
     this.catogoryFolderToggle();
+    this.simpleCartListToggle();
   }
 
   catogoryFolderToggle() {
@@ -15,6 +19,14 @@ export class EventHandler {
       catogory.addEventListener("click", () => {
         catogory.parentElement.classList.toggle("folder-show");
       });
+    });
+  }
+
+  simpleCartListToggle() {
+    // console.log(this.cartIcon);
+
+    this.cartIcon.addEventListener("click", () => {
+      this.simpleCartList.classList.toggle("SimpleCartList-show");
     });
   }
 

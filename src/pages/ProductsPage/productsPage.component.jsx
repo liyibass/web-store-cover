@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { EventHandler } from "../../scripts/EventHandler";
+
 import "./ProductsPage.style.scss";
 import ProductsFolderList from "../../components/ProductsFolderList/ProductsFolderList.component";
 import ProductsPreviewList from "../../components/ProductsPreviewList/ProductsPreviewList.component";
@@ -7,7 +7,13 @@ import NavigationSection from "../../components/NavigationSection/NavigationSect
 
 function ProductsPage() {
   useEffect(() => {
-    let ev = new EventHandler();
+    const mainCatogory = document.querySelectorAll(".mainCatogory");
+
+    mainCatogory.forEach((catogory) => {
+      catogory.addEventListener("click", () => {
+        catogory.parentElement.classList.toggle("folder-show");
+      });
+    });
   }, []);
   return (
     <div className="ProductsPage container">

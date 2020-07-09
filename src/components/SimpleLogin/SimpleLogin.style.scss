@@ -29,7 +29,7 @@
     position: absolute;
     background-color: white;
     right: -50px;
-    width: 300px;
+    width: 250px;
     min-height: 105px;
     max-height: 500px;
 
@@ -40,14 +40,19 @@
 
     // overflow: scroll;
 
-    border: 2px $mainLightGray solid;
+    border: 2px $mainLightGrey solid;
     display: none;
 
     &-show {
       display: block;
     }
 
-    @include atSmall {
+    a {
+      display: block;
+      margin-bottom: 16px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import "./ItemPreview.style.scss";
-import Button from "../Button/Button.component";
+import Button from "../../Button/Button.component";
 import { useDispatch } from "react-redux";
-import { addCartItems } from "../../redux/cart/cart.action";
+import { addCartItems } from "../../../redux/cart/cart.action";
 
 function ItemPreview({ item }) {
   const dispatch = useDispatch();

@@ -17,7 +17,7 @@
       margin: 0;
     }
     i {
-      color: $mainDarkGray;
+      color: $mainDarkGrey;
     }
 
     .detail-item {
@@ -26,7 +26,7 @@
       align-items: center;
       justify-content: space-between;
       // background-color: hotpink;
-      border-bottom: 2px $mainGray solid;
+      border-bottom: 2px $mainGrey solid;
       padding: 5px;
 
       &:last-child {

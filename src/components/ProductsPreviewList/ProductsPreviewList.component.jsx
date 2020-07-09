@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProductsPreviewList.style.scss";
-import ProductCardPreview from "../ProductCardPreview/ProductCardPreview.component";
+import ProductCardPreview from "./ProductCardPreview/ProductCardPreview.component";
 import { useSelector } from "react-redux";
 
 function ProductsPreviewList() {

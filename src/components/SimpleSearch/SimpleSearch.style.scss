@@ -28,23 +28,40 @@
     z-index: 10;
     position: absolute;
     background-color: white;
-    right: -50px;
+    right: -20px;
     width: 300px;
-    min-height: 105px;
-    max-height: 500px;
+    height: 70px;
 
-    padding: 16px;
+    padding: 16px 16px;
 
     font-size: 1rem;
     text-align: right;
 
     // overflow: scroll;
 
-    border: 2px $mainLightGray solid;
+    border: 2px $mainLightGrey solid;
     display: none;
 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
     &-show {
-      display: block;
+      display: flex;
+    }
+
+    input {
+      width: 75%;
+      height: 30px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px $mainGrey solid;
+      &:focus {
+        outline: none;
+      }
+    }
+    .Button {
+      height: 30px;
     }
 
     @include atSmall {

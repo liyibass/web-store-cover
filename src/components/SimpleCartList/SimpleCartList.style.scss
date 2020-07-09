@@ -39,11 +39,18 @@
 
     overflow: scroll;
 
-    border: 2px $mainLightGray solid;
+    border: 2px $mainLightGrey solid;
     display: none;
 
     &-show {
       display: block;
+    }
+
+    .ListContainer {
+      text-align: center;
+      p {
+        color: $mainGrey;
+      }
     }
 
     @include atSmall {

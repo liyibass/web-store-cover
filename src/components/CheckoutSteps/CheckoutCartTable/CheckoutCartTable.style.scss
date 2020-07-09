@@ -6,7 +6,7 @@
 
   .CartList {
     background: white;
-    border: 3px $mainGray solid;
+    border: 1px $mainGrey solid;
 
     .CartList-header {
       width: 100%;
@@ -17,13 +17,13 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      background: $mainGray;
+      background: rgb(240, 241, 243);
 
       .header-block {
         width: 20%;
         text-transform: capitalize;
         text-align: center;
-        color: $mainDarkGray;
+        color: $mainDarkGrey;
 
         &:first-child {
           text-align: center;

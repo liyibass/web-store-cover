@@ -32,9 +32,13 @@ function SimpleCartList() {
 
       <div className="hidingBlock hidingBlock-cartList">
         <div className="ListContainer">
-          {cartItems.map((cartItem) => (
-            <SimpleCartListPreview key={cartItem.id} cartItem={cartItem} />
-          ))}
+          {cartItems.length > 0 ? (
+            cartItems.map((cartItem) => (
+              <SimpleCartListPreview key={cartItem.id} cartItem={cartItem} />
+            ))
+          ) : (
+            <p>購物車沒有商品</p>
+          )}
         </div>
         <div className="CaptionContainer">
           <h6>總計: NT${cartItemsPrice}</h6>

@@ -64,19 +64,19 @@
         display: block;
 
         &-search {
-          color: $mainDarkGray;
-          border: 1px $mainDarkGray solid;
+          color: $mainDarkGrey;
+          border: 1px $mainDarkGrey solid;
 
           &:hover {
             color: white;
-            background-color: $mainDarkGray;
+            background-color: $mainDarkGrey;
           }
         }
         &-cart {
           color: white;
           background-color: $mainOrange;
           &:hover {
-            background-color: $mainDarkGray;
+            background-color: $mainDarkGrey;
           }
         }
 

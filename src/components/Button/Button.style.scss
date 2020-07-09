@@ -8,12 +8,37 @@
   padding: 0.8rem;
   border-radius: 10px;
   cursor: pointer;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
-    background-color: $mainGray;
+    background-color: $mainGrey;
   }
 
-  @include atSmall {
+  &-login {
+    background-color: $mainGrey;
+    color: white;
+    &:hover {
+      background-color: $mainDarkGrey;
+    }
+  }
+
+  &-sign-up {
+    background-color: white;
+    color: $mainOrange;
+    border: 1px $mainOrange solid;
+    &:hover {
+      background-color: $mainOrange;
+      color: white;
+    }
+  }
+
+  &-facebook {
+    background-color: rgb(61, 81, 167);
+
+    i {
+      margin-right: 5px;
+    }
   }
 }

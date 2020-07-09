@@ -2,11 +2,13 @@
 @import "../../styles/base/responsiveMixin.scss";
 
 .NavigationSection {
+  margin-top: 173px;
   height: 44px;
   width: 100%;
-  border-bottom: 2px $mainLightGray solid;
+  border-bottom: 2px $mainLightGrey solid;
 
-  margin-bottom: 43px;
+  background-color: white;
+  // margin-bottom: 43px;
   @include atSmall {
   }
 }

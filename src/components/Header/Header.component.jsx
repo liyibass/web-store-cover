@@ -13,13 +13,8 @@ function Header() {
     const iconBlocks = document.querySelectorAll(".iconBlock");
     const hidingBlocks = document.querySelectorAll(".hidingBlock");
 
-    // document.addEventListener("click", () => {
-    //   hidingBlocks.forEach((hidingBlock) => {
-    //     if (hidingBlock.classList.contains("hidingBlock-show")) {
-    //       // hidingBlock.classList.remove("hidingBlock-show");
-    //       console.log("YOYO");
-    //     }
-    //   });
+    // document.addEventListener("click", (e) => {
+    //   e.target.parentElement.parentElement.classList.toggle("show");
     // });
 
     iconBlocks.forEach((iconBlock, index) => {

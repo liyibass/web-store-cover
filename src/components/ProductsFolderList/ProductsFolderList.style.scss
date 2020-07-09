@@ -5,7 +5,7 @@
   user-select: none;
   position: relative;
   z-index: 5;
-  box-shadow: 0 0 3px $mainGray;
+  box-shadow: 0 0 3px $mainGrey;
   font-size: 0.8rem;
 
   .catogory-title {
@@ -13,7 +13,7 @@
     z-index: 5;
     padding: 14px;
     background: white;
-    border-bottom: 2px $mainLightGray solid;
+    border-bottom: 2px $mainLightGrey solid;
 
     display: flex;
     flex-direction: row;
@@ -23,7 +23,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: $mainLightGray;
+      background-color: $mainLightGrey;
     }
   }
 

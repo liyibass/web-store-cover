@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 // import { EventHandler } from "./scripts/EventHandler";
 
 import "./styles/base/overall.scss";
@@ -11,13 +11,9 @@ import LoginPage from "./pages/LoginPage/LoginPage.component";
 import SignupPage from "./pages/SignupPage/SignupPage.component";
 
 function App() {
-  // useEffect(() => {
-  //   let ev = new EventHandler();
-  // }, []);
   return (
     <div className="App">
       <Header />
-      {/* <HomePage /> */}
 
       <Switch>
         <Route exact path="/" component={HomePage} />

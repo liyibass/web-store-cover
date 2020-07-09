@@ -1,5 +1,5 @@
-@import "../../styles/base/variables.scss";
-@import "../../styles/base/responsiveMixin.scss";
+@import "../../../../styles/base/variables.scss";
+@import "../../../../styles/base/responsiveMixin.scss";
 .CheckoutItem {
   width: 100%;
   display: flex;
@@ -7,9 +7,8 @@
   align-items: center;
   justify-content: space-between;
 
-  height: 135px;
+  height: 110px;
   padding: 15px 0;
-  margin-bottom: 15px;
 
   border-bottom: 1px solid darkgrey;
 

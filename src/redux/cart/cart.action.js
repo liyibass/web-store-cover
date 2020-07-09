@@ -6,3 +6,17 @@ export const addCartItems = (newItem) => {
     payload: newItem,
   };
 };
+
+export const minusCartItems = (adjustItem) => {
+  return {
+    type: cartTypes.MINUS_ITEM,
+    payload: adjustItem,
+  };
+};
+
+export const deleteCartItems = (adjustItem) => {
+  return {
+    type: cartTypes.DELETE_ITEM,
+    payload: adjustItem,
+  };
+};

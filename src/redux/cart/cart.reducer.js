@@ -1,6 +1,10 @@
 import cartTypes from "./cart.types";
 
-import { addItemToCart } from "./cart.utils";
+import {
+  addItemToCart,
+  minusItemToCart,
+  deleteItemFromCart,
+} from "./cart.utils";
 
 const initialState = {
   cartItems: [],
@@ -12,6 +16,19 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         cartItems: addItemToCart(state.cartItems, action.payload),
+      };
+    }
+    case cartTypes.MINUS_ITEM: {
+      return {
+        ...state,
+        cartItems: minusItemToCart(state.cartItems, action.payload),
+      };
+    }
+
+    case cartTypes.DELETE_ITEM: {
+      return {
+        ...state,
+        cartItems: deleteItemFromCart(state.cartItems, action.payload),
       };
     }
 

@@ -1,7 +1,8 @@
-@import "../../styles/base/variables.scss";
-@import "../../styles/base/responsiveMixin.scss";
+@import "../../../../styles/base/variables.scss";
+@import "../../../../styles/base/responsiveMixin.scss";
 
 .NavButton {
+  user-select: none;
   position: relative;
   height: 60px;
   display: inline-block;

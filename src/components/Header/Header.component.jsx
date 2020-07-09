@@ -1,30 +1,43 @@
 import React, { useEffect } from "react";
-import { EventHandler } from "../../scripts/EventHandler";
-import "./Header.style.scss";
-import Navbar from "./Navbar/Navbar.component";
-import { useSelector } from "react-redux";
-import Button from "../Button/Button.component";
 
 import SimpleCartList from "../SimpleCartList/SimpleCartList.component";
+import SimpleLogin from "../SimpleLogin/SimpleLogin.component";
+import SimpleSearch from "../SimpleSearch/SimpleSearch.component";
+import Navbar from "./Navbar/Navbar.component";
+
+import "./Header.style.scss";
 
 function Header() {
-  // 實現cartIcon顯示cart的開關
+  // 實現cartIcon顯示cart的開關;
   useEffect(() => {
-    const cartIcon = document.querySelector(".cartIcon");
-    const simpleCartList = document.querySelector(".SimpleCartList");
+    const iconBlocks = document.querySelectorAll(".iconBlock");
+    const hidingBlocks = document.querySelectorAll(".hidingBlock");
 
-    cartIcon.addEventListener("click", () => {
-      simpleCartList.classList.toggle("SimpleCartList-show");
+    // document.addEventListener("click", () => {
+    //   hidingBlocks.forEach((hidingBlock) => {
+    //     if (hidingBlock.classList.contains("hidingBlock-show")) {
+    //       // hidingBlock.classList.remove("hidingBlock-show");
+    //       console.log("YOYO");
+    //     }
+    //   });
+    // });
+
+    iconBlocks.forEach((iconBlock, index) => {
+      iconBlock.addEventListener("click", () => {
+        for (let i = 0; i < hidingBlocks.length; i++) {
+          if (i === index) {
+            hidingBlocks[i].classList.toggle("hidingBlock-show");
+          } else {
+            hidingBlocks[i].classList.remove("hidingBlock-show");
+          }
+        }
+      });
     });
-  }, []);
 
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  // 累加商品數量
-  //reduce（（前次變數，變數）=>前次變數+變數，前次變數初始值）
-  const cartItemsCount = cartItems.reduce(
-    (accumalatedQuantity, cartItem) => accumalatedQuantity + cartItem.quantity,
-    0
-  );
+    // iconBlock.addEventListener("click", () => {
+    //   SimpleLogin.classList.toggle("hidingBlock-show");
+    // });
+  }, []);
 
   return (
     <div className="Header">
@@ -33,22 +46,12 @@ function Header() {
           <i className="far fa-eye brandLogo"></i>
         </a>
       </div>
-      <div className="cartSection">
-        <div className="cartSection-icon">
-          <i className="far fa-user"></i>
-        </div>
-        <div className="cartSection-icon cartIcon">
-          <i className="fas fa-shopping-cart"></i>
-          {cartItemsCount > 0 ? (
-            <div className="cartCount">{cartItemsCount}</div>
-          ) : null}
-
-          <SimpleCartList />
-        </div>
-        <div className="cartSection-icon">
-          <i className="fas fa-search"></i>
-        </div>
+      <div className="functionSection">
+        <SimpleLogin />
+        <SimpleCartList />
+        <SimpleSearch />
       </div>
+
       <Navbar />
     </div>
   );

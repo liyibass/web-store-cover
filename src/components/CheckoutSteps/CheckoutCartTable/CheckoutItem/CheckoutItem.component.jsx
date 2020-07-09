@@ -1,11 +1,11 @@
 import React from "react";
 import "./CheckoutItem.styles.scss";
 import { useDispatch } from "react-redux";
-// import {
-//   addCartItems,
-//   minusCartItems,
-//   deleteItemFromCart,
-// } from "../../redux/cart/cart.action";
+import {
+  addCartItems,
+  minusCartItems,
+  deleteCartItems,
+} from "../../../../redux/cart/cart.action";
 
 function CheckoutItem({ item }) {
   const { imageUrl, price, name, quantity } = item;
@@ -20,19 +20,19 @@ function CheckoutItem({ item }) {
       <span className="CheckoutItem-details CheckoutItem-details-quantity">
         <i
           className="fas fa-chevron-left"
-          // onClick={() => dispatch(minusCartItems(item))}
+          onClick={() => dispatch(minusCartItems(item))}
         ></i>
         {quantity}
         <i
           className="fas fa-chevron-right"
-          // onClick={() => dispatch(addCartItems(item))}
+          onClick={() => dispatch(addCartItems(item))}
         ></i>
       </span>
       <span className="CheckoutItem-details">${price}</span>
       <span className="CheckoutItem-details">
         <i
           className="far fa-trash-alt remove-button"
-          // onClick={() => dispatch(deleteItemFromCart(item))}
+          onClick={() => dispatch(deleteCartItems(item))}
         ></i>
       </span>
     </div>

@@ -25,40 +25,39 @@
     padding: 21px;
   }
 
-  .cartSection {
-    width: 160px;
+  .functionSection {
+    width: 170px;
     font-size: 1.43rem;
     position: absolute;
-    right: 12%;
-    // background-color: gold;
+    right: 2%;
 
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     padding: 16px;
     i {
       cursor: pointer;
     }
 
-    .cartSection-icon {
-      position: relative;
-      .cartCount {
-        position: absolute;
-        background-color: gold;
+    // .cartSection-icon {
+    //   position: relative;
+    //   .cartCount {
+    //     position: absolute;
+    //     background-color: gold;
 
-        height: 20px;
-        font-size: 16px;
-        text-align: center;
-        line-height: 20px;
+    //     height: 20px;
+    //     font-size: 16px;
+    //     text-align: center;
+    //     line-height: 20px;
 
-        border-radius: 10px;
-        padding: 2px;
-        top: -8px;
-        right: -12px;
-      }
-    }
+    //     border-radius: 10px;
+    //     padding: 2px;
+    //     top: -8px;
+    //     right: -12px;
+    //   }
+    // }
   }
 
   @include atSmall {

@@ -1,6 +1,7 @@
 @import "../../styles/base/variables.scss";
 @import "../../styles/base/responsiveMixin.scss";
-.SimpleCartList {
+
+.SimpleSearch {
   position: relative;
   .iconBlock {
     position: relative;
@@ -37,7 +38,7 @@
     font-size: 1rem;
     text-align: right;
 
-    overflow: scroll;
+    // overflow: scroll;
 
     border: 2px $mainLightGray solid;
     display: none;

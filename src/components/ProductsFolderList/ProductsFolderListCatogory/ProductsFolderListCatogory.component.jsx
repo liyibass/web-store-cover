@@ -5,7 +5,7 @@ import { showCatogoryShopData } from "../../../redux/shopData/shopData.action.js
 
 function ProductsFolderListCatogory({ catogory }) {
   const dispatch = useDispatch();
-
+  // console.log("ProductsFolderListCatogory", catogory);
   if (catogory.folder) {
     return (
       <div className="catogory ">

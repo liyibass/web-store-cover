@@ -2,7 +2,7 @@ import React from "react";
 import "./ProductCardPreview.style.scss";
 
 import { useDispatch } from "react-redux";
-import { addCartItems } from "../../redux/cart/cart.action";
+import { addCartItems } from "../../../redux/cart/cart.action";
 
 function ProductCardPreview({ product }) {
   const dispatch = useDispatch();

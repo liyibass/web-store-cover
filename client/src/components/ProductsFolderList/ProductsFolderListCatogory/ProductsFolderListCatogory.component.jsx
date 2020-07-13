@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ProductsFolderListCatogory.style.scss";
 import { useDispatch } from "react-redux";
 import { showCatogoryShopData } from "../../../redux/shopData/shopData.action.js";
 
 function ProductsFolderListCatogory({ catogory }) {
   const dispatch = useDispatch();
-  // console.log("ProductsFolderListCatogory", catogory);
+
+  useEffect(() => {
+    const mainCatogory = document.querySelectorAll(".mainCatogory");
+
+    mainCatogory.forEach((catogory) => {
+      catogory.addEventListener("click", () => {
+        catogory.parentElement.classList.toggle("folder-show");
+      });
+    });
+  }, []);
+
   if (catogory.folder) {
     return (
       <div className="catogory ">

@@ -1,4 +1,4 @@
-import shopDataTypes from "./shopData.type";
+import productListTypes from "./productList.type";
 import Axios from "axios";
 
 export const fetchProductListFromApi = () => {
@@ -15,14 +15,7 @@ export const fetchProductListFromApi = () => {
 
 export const setProductList = (productList) => {
   return {
-    type: shopDataTypes.SET_PRODUCT_LIST,
+    type: productListTypes.SET_PRODUCT_LIST,
     payload: productList,
-  };
-};
-
-export const showCatogoryShopData = (catogory) => {
-  return {
-    type: shopDataTypes.SHOW_CATOGORY_SHOPDATA,
-    payload: catogory,
   };
 };

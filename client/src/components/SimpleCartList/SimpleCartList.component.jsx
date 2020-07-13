@@ -34,7 +34,7 @@ function SimpleCartList() {
         <div className="ListContainer">
           {cartItems.length > 0 ? (
             cartItems.map((cartItem) => (
-              <SimpleCartListPreview key={cartItem.id} cartItem={cartItem} />
+              <SimpleCartListPreview key={cartItem._id} cartItem={cartItem} />
             ))
           ) : (
             <p>購物車沒有商品</p>

@@ -28,7 +28,7 @@ function CheckoutCartTable() {
         </div>
         <div className="CartList-content">
           {cartItems.map((cartItem) => {
-            return <CheckoutItem item={cartItem} key={cartItem.id} />;
+            return <CheckoutItem item={cartItem} key={cartItem._id} />;
           })}
         </div>
       </div>

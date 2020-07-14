@@ -13,12 +13,13 @@ function HomeProducts() {
   // dispatch(fetchProductListFromApi("5f0d1377aad7f0e259e158a3"));
   useEffect(() => {
     dispatch(fetchProductListFromApi("5f0d1377aad7f0e259e158a3"));
+    console.log(productList[0].catogory[0].title);
   }, []);
 
   return (
     <div className="HomeProducts">
       <div className="container">
-        <Title title="New Arrivals" />
+        <Title title={productList[0].catogory[0].title} />
         <div className="HomeProductsRow row">
           {productList.map((item) => {
             return <ItemPreview key={item._id} item={item} />;

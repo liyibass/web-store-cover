@@ -3,7 +3,7 @@
 
 .Navbar {
   width: 100%;
-  z-index: 10;
+  z-index: 5;
   background-color: white;
 
   .hamburger {
@@ -57,7 +57,8 @@
       background-color: white;
 
       margin-left: -100%;
-      transition: margin 0.5s ease;
+      opacity: 0;
+      transition: all 0.5s ease;
 
       .catogoryList-header {
         display: block;
@@ -100,6 +101,7 @@
     }
     .show {
       margin-left: 0;
+      opacity: 1;
     }
   }
 }

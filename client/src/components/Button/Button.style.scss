@@ -3,6 +3,7 @@
 
 .Button {
   user-select: none;
+
   background-color: $mainOrange;
   width: 100%;
   padding: 0.8rem;
@@ -15,13 +16,17 @@
   align-items: center;
   justify-content: center;
 
-  &-small {
-    width: auto;
-    padding: 0 0.8rem;
+  &:focus {
+    outline: none;
   }
 
   &:hover {
     background-color: $mainGrey;
+  }
+
+  &-small {
+    width: auto;
+    padding: 0 0.8rem;
   }
 
   &-login {

@@ -49,6 +49,7 @@
     }
   }
 
-  @include atSmall {
+  @include atMedium {
+    display: none;
   }
 }

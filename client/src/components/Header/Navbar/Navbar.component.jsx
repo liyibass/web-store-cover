@@ -7,22 +7,25 @@ import Axios from "axios";
 function Navbar() {
   const [catogoryList, setCatogoryLIst] = useState([]);
 
+  const menuToggle = () => {
+    const catogoryList = document.querySelector(".catogoryList");
+    catogoryList.classList.toggle("show");
+  };
+
   useEffect(() => {
     const cross = document.querySelector(".cross");
     const hamburger = document.querySelector(".hamburger");
-    const catogoryList = document.querySelector(".catogoryList");
-
     cross.addEventListener("click", () => {
-      catogoryList.classList.toggle("show");
+      menuToggle();
     });
 
     hamburger.addEventListener("click", () => {
-      catogoryList.classList.toggle("show");
+      menuToggle();
     });
   }, []);
 
   useEffect(() => {
-    Axios.get("http://localhost:5000/api/catogory/")
+    Axios.get("https://liyi-web-server.herokuapp.com/api/catogory/")
       .then((response) => {
         setCatogoryLIst(response.data);
       })
@@ -37,7 +40,7 @@ function Navbar() {
 
       <div className="catogoryList">
         <div className="catogoryList-header">
-          <div className="logoSection">
+          <div className="catogoryListLogo">
             <a href="/">
               <i className="far fa-eye brandLogo"></i>
             </a>
@@ -48,7 +51,13 @@ function Navbar() {
         </div>
         <div className="catogoryList-container">
           {catogoryList.map((catogory) => {
-            return <NavButton key={catogory._id} catogory={catogory} />;
+            return (
+              <NavButton
+                key={catogory._id}
+                catogory={catogory}
+                menuToggle={menuToggle}
+              />
+            );
           })}
         </div>
       </div>

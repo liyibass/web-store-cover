@@ -8,7 +8,7 @@ function ProductsFolderList() {
   const [catogoryList, setCatogoryList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:5000/api/catogory/")
+    Axios.get("https://liyi-web-server.herokuapp.com/api/catogory/")
       .then((response) => {
         setCatogoryList(response.data);
       })
@@ -16,7 +16,7 @@ function ProductsFolderList() {
   }, []);
 
   return (
-    <div className="ProductsFolderList col-lg-3">
+    <div className="ProductsFolderList col-lg-3 col-md-3">
       {catogoryList.map((catogory) => {
         return (
           <ProductsFolderListCatogory catogory={catogory} key={catogory._id} />

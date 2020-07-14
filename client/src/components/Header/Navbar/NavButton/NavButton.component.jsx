@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 
 import { fetchProductListFromApi } from "../../../../redux/productList/productList.action.js";
 
-function NavButton({ catogory }) {
+function NavButton({ catogory, menuToggle }) {
   const dispatch = useDispatch();
 
   if (!catogory.folder) {
@@ -32,6 +32,7 @@ function NavButton({ catogory }) {
                   to="/products"
                   onClick={() => {
                     dispatch(fetchProductListFromApi(subCatogory._id));
+                    menuToggle();
                   }}
                 >
                   {subCatogory.title}

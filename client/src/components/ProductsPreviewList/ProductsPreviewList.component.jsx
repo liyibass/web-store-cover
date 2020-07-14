@@ -7,7 +7,7 @@ function ProductsPreviewList() {
   const productList = useSelector((state) => state.productList.productList);
 
   return (
-    <div className="ProductsPreviewList col-lg-9">
+    <div className="ProductsPreviewList col-lg-9 col-md-12">
       <h4>{productList.title}</h4>
       <div className="row">
         {productList.map((item) => {

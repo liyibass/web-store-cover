@@ -13,6 +13,11 @@
     transform: scale(0.8) translateY(50px);
     transition: all 0.3s ease-out;
     opacity: 0.8;
+    display: block;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     img {
       border-radius: 10px;

@@ -9,9 +9,10 @@ import { fetchProductListFromApi } from "../../redux/productList/productList.act
 function HomeProducts() {
   const productList = useSelector((state) => state.productList.productList);
   const dispatch = useDispatch();
-  dispatch(fetchProductListFromApi("5f0d1377aad7f0e259e158a3"));
+
+  // dispatch(fetchProductListFromApi("5f0d1377aad7f0e259e158a3"));
   useEffect(() => {
-    // dispatch(fetchProductListFromApi("5f0d1377aad7f0e259e158a3"));
+    dispatch(fetchProductListFromApi("5f0d1377aad7f0e259e158a3"));
   }, []);
 
   return (

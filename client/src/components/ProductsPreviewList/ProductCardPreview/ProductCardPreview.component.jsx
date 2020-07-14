@@ -8,7 +8,7 @@ function ProductCardPreview({ product }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="ProductCardPreview col-lg-4">
+    <div className="ProductCardPreview col-lg-4 col-md-6 col-sm-12">
       <div className="ProductCard">
         <div className="ProductImage">
           <img src={product.imageUrl} alt="" />

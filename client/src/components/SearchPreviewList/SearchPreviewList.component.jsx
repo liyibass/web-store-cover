@@ -1,13 +1,13 @@
 import React from "react";
-import "./ProductsPreviewList.style.scss";
-import ProductCardPreview from "./ProductCardPreview/ProductCardPreview.component";
+import "./SearchPreviewList.style.scss";
+import ProductCardPreview from "./SearchProductCardPreview/SearchProductCardPreview.component";
 import { useSelector } from "react-redux";
 
-function ProductsPreviewList() {
+function SearchPreviewList() {
   const productList = useSelector((state) => state.productList.productList);
 
   return (
-    <div className="ProductsPreviewList col-lg-9">
+    <div className="SearchPreviewList col-lg-12">
       <h4>{productList.title}</h4>
       <div className="row">
         {productList.map((item) => {
@@ -18,4 +18,4 @@ function ProductsPreviewList() {
   );
 }
 
-export default ProductsPreviewList;
+export default SearchPreviewList;

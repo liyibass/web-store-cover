@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./ProductsFolderList.style.scss";
-import { useSelector } from "react-redux";
 import ProductsFolderListCatogory from "./ProductsFolderListCatogory/ProductsFolderListCatogory.component";
 
 import Axios from "axios";

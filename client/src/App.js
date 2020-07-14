@@ -9,6 +9,7 @@ import ProductsPage from "./pages/ProductsPage/productsPage.component";
 import CheckoutPage from "./pages/ChectutPage/ChectutPage.component";
 import LoginPage from "./pages/LoginPage/LoginPage.component";
 import SignupPage from "./pages/SignupPage/SignupPage.component";
+import SearchResultPage from "./pages/SearchResultPage/SearchResultPage.component";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/checkout" component={CheckoutPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/signup" component={SignupPage} />
+        <Route path="/search" component={SearchResultPage} />
       </Switch>
     </div>
   );

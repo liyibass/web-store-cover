@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import "./ProductsFolderListCatogory.style.scss";
 import { useDispatch } from "react-redux";
 import { fetchProductListFromApi } from "../../../redux/productList/productList.action.js";
-import Axios from "axios";
 
 function ProductsFolderListCatogory({ catogory }) {
   const dispatch = useDispatch();
@@ -16,10 +15,6 @@ function ProductsFolderListCatogory({ catogory }) {
       });
     });
   }, []);
-
-  //   useEffect(() => {
-  // Axios.get(`http://localhost:5000/api/product/${catogory._id}`)
-  //   }, [])
 
   if (catogory.folder) {
     return (

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.style.scss";
 import NavButton from "./NavButton/NavButton.component";
-import { useSelector, useDispatch } from "react-redux";
-// import Dropdown from "react-bootstrap";
 
 import Axios from "axios";
 

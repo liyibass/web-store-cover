@@ -3,11 +3,11 @@ import "./NavButton.style.scss";
 import { Link } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
-import { showCatogoryShopData } from "../../../../redux/shopData/shopData.action.js";
+
+import { fetchProductListFromApi } from "../../../../redux/productList/productList.action.js";
 
 function NavButton({ catogory }) {
   const dispatch = useDispatch();
-  // console.log("NavButton", catogory);
 
   if (!catogory.folder) {
     return (
@@ -37,7 +37,7 @@ function NavButton({ catogory }) {
                   className="folderItem"
                   to="/products"
                   onClick={() => {
-                    dispatch(showCatogoryShopData(subCatogory));
+                    dispatch(fetchProductListFromApi(subCatogory._id));
                   }}
                 >
                   {subCatogory.title}

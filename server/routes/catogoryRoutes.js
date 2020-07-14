@@ -3,13 +3,20 @@ const router = express.Router();
 const { Catogory } = require("../models/catogoryModel");
 
 router.get("/", async (req, res) => {
-  const catogoryList = await Catogory.find();
-  res.send(catogoryList);
+  try {
+    const catogoryList = await Catogory.find();
+    res.send(catogoryList);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
 });
 
 router.get("/:id", async (req, res) => {
-  const resultCatogory = await Catogory.find({ title: req.body.title });
-  res.send(resultCatogory);
+  try {
+    res.send(resultCatogory);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
 });
 
 router.post("/", async (req, res) => {

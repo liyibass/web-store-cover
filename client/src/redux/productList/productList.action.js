@@ -3,7 +3,20 @@ import Axios from "axios";
 
 export const fetchProductListFromApi = (catogoryId) => {
   return function (dispatch) {
-    Axios.get(`http://localhost:5000/api/product/${catogoryId}`)
+    Axios.get(`http://localhost:5000/api/product/catogory/${catogoryId}`)
+      .then((response) => {
+        dispatch(setProductList(response.data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+};
+
+export const fetchResultListFromApi = (search) => {
+  return function (dispatch) {
+    const encodeUrl = encodeURIComponent(search);
+    Axios.get(`http://localhost:5000/api/product/search/${encodeUrl}`)
       .then((response) => {
         dispatch(setProductList(response.data));
       })

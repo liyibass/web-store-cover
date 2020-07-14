@@ -8,7 +8,7 @@ function Footer() {
         <div className="logo-section footer-section">
           <div className="logoSection">
             <a href="/">
-              <i className="far fa-eye brandLogo"></i>
+              <i className="far fa-eye "></i>
             </a>
           </div>
         </div>
@@ -43,7 +43,7 @@ function Footer() {
         <div className="empty-section footer-section"></div>
         <div className="facebook-section footer-section">
           <div
-            class="fb-page"
+            className="fb-page"
             data-href="https://www.facebook.com/react/"
             data-tabs=""
             data-width=""
@@ -55,7 +55,7 @@ function Footer() {
           >
             <blockquote
               cite="https://www.facebook.com/react/"
-              class="fb-xfbml-parse-ignore"
+              className="fb-xfbml-parse-ignore"
             >
               <a href="https://www.facebook.com/react/">React</a>
             </blockquote>

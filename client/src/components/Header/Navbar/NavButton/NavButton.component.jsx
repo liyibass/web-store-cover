@@ -12,13 +12,7 @@ function NavButton({ catogory }) {
   if (!catogory.folder) {
     return (
       <div className="NavButton">
-        <Link
-          className="NavButton-title"
-          to="/products"
-          // onClick={() => {
-          //   dispatch(showCatogoryShopData(catogory));
-          // }}
-        >
+        <Link className="NavButton-title" to="/products">
           {catogory.title}
         </Link>
       </div>

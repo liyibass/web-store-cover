@@ -19,39 +19,58 @@
       padding: 10px;
     }
 
-    .brandLogo {
+    .logoSection {
       font-size: 70px;
-
-      color: $mainDark;
-      padding: 21px;
-    }
-  }
-
-  h5 {
-    font-size: 0.9rem;
-    // margin: 0;
-  }
-
-  hr {
-    margin: 0 0 20px;
-  }
-
-  ul {
-    // background-color: red;
-    padding: 0;
-    li {
-      // margin: 0;
-      list-style: none;
-      font-size: 0.8em;
-      color: $mainDarkGrey;
-      padding: 5px 0;
       i {
-        font-size: 1rem;
-        padding-right: 5px;
+        color: $mainDark;
+        padding: 21px;
+      }
+    }
+
+    h5 {
+      font-size: 0.9rem;
+      // margin: 0;
+    }
+
+    hr {
+      margin: 0 0 20px;
+    }
+
+    ul {
+      // background-color: red;
+      padding: 0;
+      li {
+        // margin: 0;
+        list-style: none;
+        font-size: 0.8em;
+        color: $mainDarkGrey;
+        padding: 5px 0;
+        i {
+          font-size: 1rem;
+          padding-right: 5px;
+        }
       }
     }
   }
 
+  @include atLarge {
+  }
+
   @include atSmall {
+    height: auto;
+    .container {
+      flex-direction: column;
+      align-items: center;
+
+      .footer-section {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+
+        &:last-child {
+          margin-bottom: 50px;
+        }
+      }
+    }
   }
 }

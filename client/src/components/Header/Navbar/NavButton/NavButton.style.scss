@@ -2,16 +2,17 @@
 @import "../../../../styles/base/responsiveMixin.scss";
 
 .NavButton {
-  user-select: none;
-  position: relative;
   height: 60px;
+  position: relative;
   display: inline-block;
-  padding: 22px 10px;
+  padding: 20px 10px;
+
+  user-select: none;
   cursor: pointer;
 
   .NavButton-title {
-    margin: 0;
-    padding: 0;
+    display: block;
+
     font-size: 1rem;
     font-weight: 400;
     color: $mainDark;
@@ -39,6 +40,10 @@
 
       border-bottom: 1px $mainGrey solid;
 
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
       &:hover {
         color: white;
         background-color: $mainOrange;
@@ -56,6 +61,37 @@
     }
   }
 
-  @include atSmall {
+  @include atLarge {
+    height: auto;
+    padding: 0px;
+
+    border-bottom: 2px $mainLightGrey solid;
+    background-color: $mainOrange;
+
+    .NavButton-title {
+      padding: 10px 0;
+      color: white;
+    }
+
+    .NavButton-folder {
+      position: relative;
+      width: 100%;
+      top: 0;
+      padding-left: 10px;
+      z-index: 20;
+
+      display: flex;
+      flex-direction: column;
+
+      .folderItem {
+        &:hover {
+          color: $mainDarkGrey;
+          background-color: white;
+          text-decoration: none;
+        }
+
+        // background-color: $mainOrange;
+      }
+    }
   }
 }

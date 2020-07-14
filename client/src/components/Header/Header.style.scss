@@ -8,21 +8,18 @@
   height: 173px;
   width: 100%;
   background: white;
-  // position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  // margin-bottom: 5px;
+  justify-content: space-between;
 
-  .brandLogo {
-    font-size: 70px;
-    // background-color: red;
-    // position: absolute;
-    // top: 0;
-    // left: 50%;
-    // transform: translateX(-50%);
-    color: $mainDark;
-    padding: 21px;
+  .logoSection {
+    padding-top: 28px;
+    i {
+      font-size: 60px;
+      color: $mainDark;
+    }
   }
 
   .functionSection {
@@ -40,26 +37,25 @@
     i {
       cursor: pointer;
     }
+  }
 
-    // .cartSection-icon {
-    //   position: relative;
-    //   .cartCount {
-    //     position: absolute;
-    //     background-color: gold;
+  @include atLarge {
+    height: 60px;
 
-    //     height: 20px;
-    //     font-size: 16px;
-    //     text-align: center;
-    //     line-height: 20px;
+    flex-direction: row;
 
-    //     border-radius: 10px;
-    //     padding: 2px;
-    //     top: -8px;
-    //     right: -12px;
-    //   }
-    // }
+    .logoSection {
+      padding: 21px;
+      margin-left: 60px;
+      i {
+        font-size: 50px;
+      }
+    }
   }
 
   @include atSmall {
+    .logoSection {
+      display: none;
+    }
   }
 }

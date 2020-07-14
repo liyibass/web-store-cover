@@ -1,4 +1,10 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
 .HomePage {
   margin-top: 173px;
+
+  @include atLarge {
+    margin-top: 50px;
+  }
   // background: orange;
 }

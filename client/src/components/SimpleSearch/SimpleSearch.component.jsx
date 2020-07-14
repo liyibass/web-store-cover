@@ -12,10 +12,12 @@ function SimpleSearch(props) {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
 
-  const handleSearch = (e) => {
+  const handleSearch = (event) => {
+    event.preventDefault();
+
     dispatch(fetchResultListFromApi(search));
     setSearch("");
-    e.currentTarget.parentNode.classList.remove("hidingBlock-show");
+    event.currentTarget.parentNode.classList.remove("hidingBlock-show");
 
     props.history.push("/search");
   };
@@ -26,26 +28,24 @@ function SimpleSearch(props) {
         <i className="fas fa-search"></i>
       </div>
 
-      <div className="hidingBlock hidingBlock-searchBlock">
+      <form
+        className="hidingBlock hidingBlock-searchBlock"
+        onSubmit={(event) => handleSearch(event)}
+      >
         <input
           type="text"
           value={search}
           placeholder="請輸入產品"
-          onChange={(e) => setSearch(e.target.value)}
-          onKeyPress={(e) => {
-            if (e.key === "Enter") {
-              handleSearch(e);
-            }
-          }}
+          onChange={(event) => setSearch(event.target.value)}
+          // onKeyPress={(e) => {
+          //   if (e.key === "Enter") {
+          //     handleSearch(e);
+          //   }
+          // }}
         />
-        <Link
-          to="/search"
-          style={{ textDecoration: "none" }}
-          onClick={(e) => handleSearch(e)}
-        >
-          <Button title="搜尋" />
-        </Link>
-      </div>
+
+        <Button title="搜尋" type="submit" />
+      </form>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 export const addItemToCart = (cartItems, newItem) => {
-  const existFlag = cartItems.find((item) => item.id === newItem.id);
+  const existFlag = cartItems.find((item) => item._id === newItem._id);
 
   if (!existFlag) {
     return [...cartItems, { ...newItem, quantity: 1 }];
   } else {
     return cartItems.map((cartItem) => {
-      if (cartItem.id !== newItem.id) return cartItem;
+      if (cartItem._id !== newItem._id) return cartItem;
       return { ...cartItem, quantity: cartItem.quantity + 1 };
     });
   }
@@ -25,7 +25,7 @@ export const minusItemToCart = (cartItems, adjustItem) => {
     // 就要從購物車中把他找出來，並且quantity-1
   } else {
     return cartItems.map((cartItem) => {
-      if (cartItem.id !== adjustItem.id) {
+      if (cartItem._id !== adjustItem._id) {
         return cartItem;
       } else {
         return { ...cartItem, quantity: cartItem.quantity - 1 };
@@ -35,5 +35,5 @@ export const minusItemToCart = (cartItems, adjustItem) => {
 };
 
 export const deleteItemFromCart = (cartItems, adjustItem) => {
-  return cartItems.filter((cartItem) => cartItem.id !== adjustItem.id);
+  return cartItems.filter((cartItem) => cartItem._id !== adjustItem._id);
 };

@@ -33,7 +33,7 @@ function NavButton({ catogory }) {
             {catogory.folder.map((subCatogory) => {
               return (
                 <Link
-                  key={subCatogory.id}
+                  key={subCatogory._id}
                   className="folderItem"
                   to="/products"
                   onClick={() => {

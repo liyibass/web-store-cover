@@ -6,12 +6,12 @@ import ProductsFolderListCatogory from "./ProductsFolderListCatogory/ProductsFol
 import Axios from "axios";
 
 function ProductsFolderList() {
-  const [catogoryList, setCatogoryLIst] = useState([]);
+  const [catogoryList, setCatogoryList] = useState([]);
 
   useEffect(() => {
     Axios.get("http://localhost:5000/api/catogory/")
       .then((response) => {
-        setCatogoryLIst(response.data);
+        setCatogoryList(response.data);
       })
       .catch((error) => console.log(error));
   }, []);

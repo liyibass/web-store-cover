@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import "./ProductsFolderListCatogory.style.scss";
 import { useDispatch } from "react-redux";
-import { showCatogoryShopData } from "../../../redux/shopData/shopData.action.js";
+import { fetchProductListFromApi } from "../../../redux/productList/productList.action.js";
+import Axios from "axios";
 
 function ProductsFolderListCatogory({ catogory }) {
   const dispatch = useDispatch();
@@ -16,6 +17,10 @@ function ProductsFolderListCatogory({ catogory }) {
     });
   }, []);
 
+  //   useEffect(() => {
+  // Axios.get(`http://localhost:5000/api/product/${catogory._id}`)
+  //   }, [])
+
   if (catogory.folder) {
     return (
       <div className="catogory ">
@@ -29,9 +34,9 @@ function ProductsFolderListCatogory({ catogory }) {
             return (
               <div
                 className="catogory-title"
-                key={subCatogory.id}
+                key={subCatogory._id}
                 onClick={() => {
-                  dispatch(showCatogoryShopData(subCatogory));
+                  dispatch(fetchProductListFromApi(subCatogory._id));
                 }}
               >
                 {subCatogory.title}

@@ -15,6 +15,10 @@ const productListReducer = (state = initialState, action) => {
       };
     }
 
+    case productListTypes.SET_CATOGORY_PRODUCT_LIST: {
+      return state;
+    }
+
     default:
       return state;
   }

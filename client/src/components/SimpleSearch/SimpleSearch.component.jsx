@@ -17,7 +17,8 @@ function SimpleSearch(props) {
 
     dispatch(fetchResultListFromApi(search));
     setSearch("");
-    event.currentTarget.parentNode.classList.remove("hidingBlock-show");
+
+    event.currentTarget.classList.remove("hidingBlock-show");
 
     props.history.push("/search");
   };
@@ -44,7 +45,7 @@ function SimpleSearch(props) {
           // }}
         />
 
-        <Button title="搜尋" type="submit" />
+        <Button title="搜尋" type="submit" className={"Button-small"} />
       </form>
     </div>
   );

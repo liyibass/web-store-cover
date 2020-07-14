@@ -1,5 +1,10 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
 .SearchResultPage {
   margin-top: 173px;
-  // background: orange;
-  // height: 800px;
+
+  @include atLarge {
+    margin-top: 50px;
+  }
 }

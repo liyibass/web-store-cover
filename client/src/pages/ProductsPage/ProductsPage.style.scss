@@ -2,10 +2,9 @@
 @import "../../styles/base/responsiveMixin.scss";
 
 .ProductsPage {
-  margin-top: calc(173px + 43px);
+  margin-top: 173px;
 
-  @include atMedium {
-    margin-top: 60px;
+  @include atLarge {
+    margin-top: 50px;
   }
-  // background: orange;
 }

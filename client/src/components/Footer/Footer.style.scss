@@ -1,0 +1,57 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.Footer {
+  width: 100%;
+  height: 330px;
+  bottom: 0;
+  padding: 40px 0;
+
+  background-color: $mainLightGrey;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    .footer-section {
+      width: 20%;
+      padding: 10px;
+    }
+
+    .brandLogo {
+      font-size: 70px;
+
+      color: $mainDark;
+      padding: 21px;
+    }
+  }
+
+  h5 {
+    font-size: 0.9rem;
+    // margin: 0;
+  }
+
+  hr {
+    margin: 0 0 20px;
+  }
+
+  ul {
+    // background-color: red;
+    padding: 0;
+    li {
+      // margin: 0;
+      list-style: none;
+      font-size: 0.8em;
+      color: $mainDarkGrey;
+      padding: 5px 0;
+      i {
+        font-size: 1rem;
+        padding-right: 5px;
+      }
+    }
+  }
+
+  @include atSmall {
+  }
+}

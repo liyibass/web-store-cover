@@ -1,28 +1,23 @@
 import React, { useState } from "react";
 
 import Button from "../Button/Button.component";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 import "./SimpleSearch.style.scss";
 
 import { fetchResultListFromApi } from "../../redux/productList/productList.action";
 import { useDispatch } from "react-redux";
 
-function SimpleSearch() {
+function SimpleSearch(props) {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
 
   const handleSearch = (e) => {
     dispatch(fetchResultListFromApi(search));
-
     setSearch("");
-
     e.currentTarget.parentNode.classList.remove("hidingBlock-show");
-  };
 
-  const enterHandler = (e) => {
-    // if(e.key)
-    console.log(e.key);
+    props.history.push("/search");
   };
 
   return (
@@ -38,7 +33,9 @@ function SimpleSearch() {
           placeholder="請輸入產品"
           onChange={(e) => setSearch(e.target.value)}
           onKeyPress={(e) => {
-            if (e.key === "Enter") handleSearch(e);
+            if (e.key === "Enter") {
+              handleSearch(e);
+            }
           }}
         />
         <Link
@@ -53,4 +50,4 @@ function SimpleSearch() {
   );
 }
 
-export default SimpleSearch;
+export default withRouter(SimpleSearch);

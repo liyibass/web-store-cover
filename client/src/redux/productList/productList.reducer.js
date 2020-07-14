@@ -4,6 +4,7 @@ import productListTypes from "./productList.type";
 
 const initialState = {
   productList: [],
+  search: "",
 };
 
 const productListReducer = (state = initialState, action) => {
@@ -12,6 +13,7 @@ const productListReducer = (state = initialState, action) => {
       return {
         ...state,
         productList: action.payload,
+        search: action.search,
       };
     }
 

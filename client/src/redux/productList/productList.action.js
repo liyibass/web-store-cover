@@ -18,7 +18,7 @@ export const fetchResultListFromApi = (search) => {
     const encodeUrl = encodeURIComponent(search);
     Axios.get(`http://localhost:5000/api/product/search/${encodeUrl}`)
       .then((response) => {
-        dispatch(setProductList(response.data));
+        dispatch(setProductList(response.data, search));
       })
       .catch((error) => {
         console.log(error);
@@ -26,10 +26,11 @@ export const fetchResultListFromApi = (search) => {
   };
 };
 
-export const setProductList = (productList) => {
+export const setProductList = (productList, search) => {
   return {
     type: productListTypes.SET_PRODUCT_LIST,
     payload: productList,
+    search: search,
   };
 };
 

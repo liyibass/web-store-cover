@@ -67,7 +67,6 @@ router.post("/", async (req, res) => {
 router.put("/:productId", async (req, res) => {
   const modifiedProduct = req.body;
 
-  console.log(modifiedProduct);
   try {
     const updateProduct = await Product.updateOne(
       { _id: modifiedProduct._id },
@@ -90,7 +89,7 @@ router.put("/renameField", async (req, res) => {
     );
     res.send(renameAllProduct);
   } catch (error) {
-    console.log(error.message);
+    res.send(error.message);
   }
 });
 
@@ -98,7 +97,7 @@ router.put("/renameField", async (req, res) => {
 router.put("/deleteField/:fieldName", async (req, res) => {
   try {
     const fieldName = req.params.fieldName;
-    console.log(fieldName);
+
     const deleteFieldForAllProduct = await Product.updateMany(
       {},
       { $unset: { [fieldName]: 1 } },
@@ -106,7 +105,7 @@ router.put("/deleteField/:fieldName", async (req, res) => {
     );
     res.send(deleteFieldForAllProduct);
   } catch (error) {
-    console.log(error.message);
+    res.send(error.message);
   }
 });
 
@@ -119,7 +118,7 @@ router.delete("/", async (req, res) => {
 router.put("/addCatogory/:id", async (req, res) => {
   const catogoryList = await Catogory.find();
   const newCatogory = [catogoryList[0], catogoryList[1]];
-  console.log(newCatogory);
+
   try {
     const productListUpdate = await Product.updateOne(
       { _id: req.params.id },

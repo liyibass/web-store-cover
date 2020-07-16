@@ -12,8 +12,7 @@ function HomeProducts() {
 
   // dispatch(fetchProductListFromApi("5f0d1377aad7f0e259e158a3"));
   useEffect(() => {
-    dispatch(fetchProductListFromApi("5f0d1377aad7f0e259e158a3"));
-    console.log(productList[0].catogory[0].title);
+    dispatch(fetchProductListFromApi("5f0f16acd4502543cfd9e100"));
   }, []);
 
   return (

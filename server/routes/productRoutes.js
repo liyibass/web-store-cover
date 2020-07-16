@@ -68,24 +68,72 @@ router.post("/", async (req, res) => {
   res.send(addProduct);
 });
 
-// 自定義：用id找到product並修改catogory
-router.put("/addCatogory/:id", async (req, res) => {
-  const catogoryList = await Catogory.find();
-  const newCatogory = catogoryList[0].toObject().folder[4];
+// 更新單一商品全部資料
+router.put("/:productId", async (req, res) => {
+  const modifiedProduct = req.body;
+
+  console.log(modifiedProduct);
   try {
-    const productListUpdate = await Product.updateOne(
-      { _id: req.params.id },
-      { catogory: [newCatogory] }
+    const updateProduct = await Product.updateOne(
+      { _id: modifiedProduct._id },
+      modifiedProduct
     );
-    res.send(productListUpdate);
+
+    res.send(updateProduct);
   } catch (error) {
-    res.send(error.message);
+    res.status(404).send(error.message);
+  }
+});
+
+// 自定義：field改名
+router.put("/renameField", async (req, res) => {
+  try {
+    const renameAllProduct = await Product.updateMany(
+      {},
+      { $rename: { catogory: "catogories" } },
+      { multi: true }
+    );
+    res.send(renameAllProduct);
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
+// 自定義：刪除field
+router.put("/deleteField/:fieldName", async (req, res) => {
+  try {
+    const fieldName = req.params.fieldName;
+    console.log(fieldName);
+    const deleteFieldForAllProduct = await Product.updateMany(
+      {},
+      { $unset: { [fieldName]: 1 } },
+      { multi: true }
+    );
+    res.send(deleteFieldForAllProduct);
+  } catch (error) {
+    console.log(error.message);
   }
 });
 
 router.delete("/", async (req, res) => {
   const removeProduct = await Product.deleteOne({ title: req.body.title });
   res.send(removeProduct);
+});
+
+// 自定義：用id找到product並修改catogory
+router.put("/addCatogory/:id", async (req, res) => {
+  const catogoryList = await Catogory.find();
+  const newCatogory = [catogoryList[0], catogoryList[1]];
+  console.log(newCatogory);
+  try {
+    const productListUpdate = await Product.updateOne(
+      { _id: req.params.id },
+      { catogory: [...newCatogory] }
+    );
+    res.send(productListUpdate);
+  } catch (error) {
+    res.send(error.message);
+  }
 });
 
 module.exports = router;

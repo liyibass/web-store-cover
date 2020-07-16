@@ -1,0 +1,32 @@
+.NavigationList {
+  text-align: center;
+  .column {
+    width: 18%;
+
+    &:last-child {
+      width: 70px;
+    }
+  }
+  input {
+    width: 100%;
+  }
+
+  img {
+    height: 80px;
+  }
+
+  .catogoryCheck {
+    // background-color: gold;
+    margin: 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    input {
+      width: 1rem;
+    }
+    label {
+      margin: 0;
+    }
+  }
+}

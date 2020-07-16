@@ -1,0 +1,10 @@
+.CatogoryCheckboxHandler {
+  display: flex;
+  flex-direction: row;
+  .list {
+    flex: 1;
+  }
+  .checkbox {
+    flex: 1;
+  }
+}

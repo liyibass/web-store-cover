@@ -7,8 +7,8 @@ const catogorySchema = mongoose.Schema({
   },
 });
 
-const catogoryModel = mongoose.model("Catogory", catogorySchema);
+const CatogoryModel = mongoose.model("catogory", catogorySchema);
 
-// module.exports = Catogory;
+// module.exports = catogory;
 exports.catogorySchema = catogorySchema;
-exports.Catogory = catogoryModel;
+exports.Catogory = CatogoryModel;

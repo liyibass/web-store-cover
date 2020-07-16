@@ -25,7 +25,7 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    Axios.get("https://liyi-web-server.herokuapp.com/api/catogory/")
+    Axios.get("http://localhost:5000/api/navigation")
       .then((response) => {
         setCatogoryLIst(response.data);
       })

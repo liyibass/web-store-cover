@@ -19,8 +19,12 @@ const productSchema = mongoose.Schema({
   catogory: {
     type: [catogorySchema],
   },
+
+  catogories: {
+    type: [catogorySchema],
+  },
 });
 
-const productModel = mongoose.model("Product", productSchema);
+const ProductModel = mongoose.model("Product", productSchema);
 
-exports.Product = productModel;
+exports.Product = ProductModel;

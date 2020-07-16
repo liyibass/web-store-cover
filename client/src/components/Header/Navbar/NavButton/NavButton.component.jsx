@@ -6,36 +6,37 @@ import { useDispatch } from "react-redux";
 
 import { fetchProductListFromApi } from "../../../../redux/productList/productList.action.js";
 
-function NavButton({ catogory, menuToggle }) {
+function NavButton({ navigation, menuToggle }) {
   const dispatch = useDispatch();
 
-  if (!catogory.folder) {
+  if (!navigation.catogories) {
     return (
       <div className="NavButton">
         <Link className="NavButton-title" to="/products">
-          {catogory.title}
+          {navigation.title}
         </Link>
       </div>
     );
   } else {
     return (
       <div className="NavButton">
-        <div className="NavButton-title">{catogory.title}</div>
+        <div className="NavButton-title">{navigation.title}</div>
 
-        {catogory.folder ? (
+        {navigation.catogories ? (
           <div className="NavButton-folder">
-            {catogory.folder.map((subCatogory) => {
+            {navigation.catogories.map((catogory) => {
+              console.log(catogory._id);
               return (
                 <Link
-                  key={subCatogory._id}
+                  key={catogory._id}
                   className="folderItem"
                   to="/products"
                   onClick={() => {
-                    dispatch(fetchProductListFromApi(subCatogory._id));
+                    dispatch(fetchProductListFromApi(catogory._id));
                     menuToggle();
                   }}
                 >
-                  {subCatogory.title}
+                  {catogory.title}
                 </Link>
               );
             })}

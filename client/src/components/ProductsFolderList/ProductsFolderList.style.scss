@@ -7,43 +7,45 @@
   z-index: 3;
   box-shadow: 0 0 3px $mainGrey;
   font-size: 0.8rem;
+  .navigation {
+    .navigation-title,
+    .catogory-title {
+      position: relative;
+      z-index: 5;
+      padding: 14px;
+      background: white;
+      border-bottom: 2px $mainLightGrey solid;
 
-  .catogory-title {
-    position: relative;
-    z-index: 5;
-    padding: 14px;
-    background: white;
-    border-bottom: 2px $mainLightGrey solid;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+      cursor: pointer;
 
-    cursor: pointer;
+      &:hover {
+        background-color: $mainLightGrey;
+      }
+    }
 
-    &:hover {
-      background-color: $mainLightGrey;
+    .navigation-folder {
+      position: relative;
+      z-index: -1;
+      background: white;
+      margin-left: 10px;
+
+      max-height: 0;
+      transition: all 0.3s ease;
     }
   }
 
-  .catogory-folder {
-    position: relative;
-    z-index: -1;
-    background: white;
-    margin-left: 10px;
-
-    max-height: 0;
-    transition: all 0.3s ease;
-  }
-
   .folder-show {
-    .catogory-title {
+    .navigation-title {
       i {
         transform: scaleY(-1);
       }
     }
-    .catogory-folder {
+    .navigation-folder {
       z-index: 6;
       max-height: 800px;
     }

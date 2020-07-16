@@ -18,7 +18,7 @@ function HomeProducts() {
   return (
     <div className="HomeProducts">
       <div className="container">
-        <Title title={productList[0].catogory[0].title} />
+        {/* <Title title={productList[0].catogory[0].title} /> */}
         <div className="HomeProductsRow row">
           {productList.map((item) => {
             return <ItemPreview key={item._id} item={item} />;

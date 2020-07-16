@@ -3,38 +3,38 @@ import "./ProductsFolderListCatogory.style.scss";
 import { useDispatch } from "react-redux";
 import { fetchProductListFromApi } from "../../../redux/productList/productList.action.js";
 
-function ProductsFolderListCatogory({ catogory }) {
+function ProductsFolderListCatogory({ navigation }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const mainCatogory = document.querySelectorAll(".mainCatogory");
+    const navigationList = document.querySelectorAll(".mainNavigation");
 
-    mainCatogory.forEach((catogory) => {
-      catogory.addEventListener("click", () => {
-        catogory.parentElement.classList.toggle("folder-show");
+    navigationList.forEach((singleNavigation) => {
+      singleNavigation.addEventListener("click", () => {
+        singleNavigation.parentElement.classList.toggle("folder-show");
       });
     });
   }, []);
 
-  if (catogory.folder) {
+  if (navigation.catogories) {
     return (
-      <div className="catogory ">
-        <div className="catogory-title mainCatogory">
-          {catogory.title}
-          <i className="fas fa-chevron-down catogoryArrow"></i>
+      <div className="navigation ">
+        <div className="navigation-title mainNavigation">
+          {navigation.title}
+          <i className="fas fa-chevron-down navigationArrow"></i>
         </div>
 
-        <div className="catogory-folder ">
-          {catogory.folder.map((subCatogory) => {
+        <div className="navigation-folder ">
+          {navigation.catogories.map((catogory) => {
             return (
               <div
                 className="catogory-title"
-                key={subCatogory._id}
+                key={catogory._id}
                 onClick={() => {
-                  dispatch(fetchProductListFromApi(subCatogory._id));
+                  dispatch(fetchProductListFromApi(catogory._id));
                 }}
               >
-                {subCatogory.title}
+                {catogory.title}
               </div>
             );
           })}
@@ -43,8 +43,8 @@ function ProductsFolderListCatogory({ catogory }) {
     );
   } else
     return (
-      <div className="catogory">
-        <div className="catogory-title">{catogory.title}</div>
+      <div className="navigation">
+        <div className="navigation-title">{navigation.title}</div>
       </div>
     );
 }

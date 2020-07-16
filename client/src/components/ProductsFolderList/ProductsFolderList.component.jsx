@@ -5,21 +5,24 @@ import ProductsFolderListCatogory from "./ProductsFolderListCatogory/ProductsFol
 import Axios from "axios";
 
 function ProductsFolderList() {
-  const [catogoryList, setCatogoryList] = useState([]);
+  const [navigationList, setNavigationList] = useState([]);
 
   useEffect(() => {
     Axios.get("http://localhost:5000/api/navigation")
       .then((response) => {
-        setCatogoryList(response.data);
+        setNavigationList(response.data);
       })
       .catch((error) => console.log(error));
   }, []);
 
   return (
     <div className="ProductsFolderList col-lg-3 col-md-3">
-      {catogoryList.map((catogory) => {
+      {navigationList.map((navigation) => {
         return (
-          <ProductsFolderListCatogory catogory={catogory} key={catogory._id} />
+          <ProductsFolderListCatogory
+            navigation={navigation}
+            key={navigation._id}
+          />
         );
       })}
     </div>

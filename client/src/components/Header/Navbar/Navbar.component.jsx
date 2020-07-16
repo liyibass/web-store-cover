@@ -5,11 +5,11 @@ import NavButton from "./NavButton/NavButton.component";
 import Axios from "axios";
 
 function Navbar() {
-  const [catogoryList, setCatogoryLIst] = useState([]);
+  const [navigationList, setNavigationList] = useState([]);
 
   const menuToggle = () => {
-    const catogoryList = document.querySelector(".catogoryList");
-    catogoryList.classList.toggle("show");
+    const navigationList = document.querySelector(".navigationList");
+    navigationList.classList.toggle("show");
   };
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function Navbar() {
   useEffect(() => {
     Axios.get("http://localhost:5000/api/navigation")
       .then((response) => {
-        setCatogoryLIst(response.data);
+        setNavigationList(response.data);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -38,9 +38,9 @@ function Navbar() {
         <i className="fas fa-bars"></i>
       </div>
 
-      <div className="catogoryList">
-        <div className="catogoryList-header">
-          <div className="catogoryListLogo">
+      <div className="navigationList">
+        <div className="navigationList-header">
+          <div className="navigationListLogo">
             <a href="/">
               <i className="far fa-eye brandLogo"></i>
             </a>
@@ -49,12 +49,12 @@ function Navbar() {
             <i className="fas fa-times "></i>
           </div>
         </div>
-        <div className="catogoryList-container">
-          {catogoryList.map((catogory) => {
+        <div className="navigationList-container">
+          {navigationList.map((catogory) => {
             return (
               <NavButton
                 key={catogory._id}
-                catogory={catogory}
+                navigation={catogory}
                 menuToggle={menuToggle}
               />
             );

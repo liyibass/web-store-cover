@@ -25,7 +25,7 @@ router.get("/catogory/:catogoryId", async (req, res) => {
     const allProducts = await Product.find();
 
     const resultProducts = allProducts.filter((product) => {
-      matchCatogory = product.catogory.find((catogory) => {
+      const matchCatogory = product.catogories.find((catogory) => {
         return catogory._id == req.params.catogoryId;
       });
 
@@ -34,11 +34,6 @@ router.get("/catogory/:catogoryId", async (req, res) => {
     });
 
     res.send(resultProducts);
-
-    // const catogory = await Catogory.find({
-    //   folder: Array,
-    // });
-    // res.send(catogory);
   } catch (error) {
     res.status(404).send(error.message);
   }

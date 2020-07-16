@@ -36,13 +36,13 @@
       font-size: 1rem;
       color: $mainDark;
       font-weight: 400;
-      margin: 6px;
-      padding: 6px;
+      padding: 12px;
+      // padding: 6px;
 
-      border-bottom: 1px $mainGrey solid;
+      border-bottom: 3px $mainLightGrey solid;
 
       &:last-child {
-        padding-bottom: 0;
+        // padding-bottom: 0;
         border-bottom: none;
       }
       &:hover {

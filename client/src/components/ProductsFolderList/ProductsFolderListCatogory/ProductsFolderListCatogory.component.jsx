@@ -16,7 +16,7 @@ function ProductsFolderListCatogory({ navigation }) {
     });
   }, []);
 
-  if (navigation.catogories) {
+  if (navigation.catogories.length > 0) {
     return (
       <div className="navigation ">
         <div className="navigation-title mainNavigation">

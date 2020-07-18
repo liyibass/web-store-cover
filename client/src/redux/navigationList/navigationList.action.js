@@ -3,7 +3,7 @@ import Axios from "axios";
 
 export const fetchNavigationListFromApi = () => {
   return function (dispatch) {
-    Axios.get(`http://localhost:5000/api/navigation`)
+    Axios.get(`https://liyi-web-server.herokuapp.com/api/navigation`)
       .then((response) => {
         dispatch(setNavigationList(response.data));
       })

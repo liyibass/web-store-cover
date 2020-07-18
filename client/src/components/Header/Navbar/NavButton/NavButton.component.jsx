@@ -25,7 +25,6 @@ function NavButton({ navigation, menuToggle }) {
         {navigation.catogories ? (
           <div className="NavButton-folder">
             {navigation.catogories.map((catogory) => {
-              console.log(catogory._id);
               return (
                 <Link
                   key={catogory._id}

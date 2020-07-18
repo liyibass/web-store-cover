@@ -3,7 +3,9 @@ import Axios from "axios";
 
 export const fetchProductListFromApi = (catogoryId) => {
   return function (dispatch) {
-    Axios.get(`http://localhost:5000/api/product/catogory/${catogoryId}`)
+    Axios.get(
+      `https://liyi-web-server.herokuapp.com/api/product/catogory/${catogoryId}`
+    )
       .then((response) => {
         dispatch(setProductList(response.data));
       })
@@ -29,6 +31,7 @@ export const fetchResultListFromApi = (search) => {
 };
 
 export const setProductList = (productList, search) => {
+  window.scrollTo(0, 0);
   return {
     type: productListTypes.SET_PRODUCT_LIST,
     payload: productList,

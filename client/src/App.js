@@ -11,6 +11,7 @@ import LoginPage from "./pages/LoginPage/LoginPage.component";
 import SignupPage from "./pages/SignupPage/SignupPage.component";
 import SearchResultPage from "./pages/SearchResultPage/SearchResultPage.component";
 import Footer from "./components/Footer/Footer.component";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/search" component={SearchResultPage} />
       </Switch>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

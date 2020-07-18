@@ -25,7 +25,7 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    Axios.get("http://localhost:5000/api/navigation")
+    Axios.get("https://liyi-web-server.herokuapp.com/api/navigation")
       .then((response) => {
         setNavigationList(response.data);
       })

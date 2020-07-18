@@ -17,13 +17,11 @@ const homeRouter = require("./routes/homeRoutes");
 const navigationRouter = require("./routes/navigationRoutes");
 const catogoryRouter = require("./routes/catogoryRoutes");
 const productRouter = require("./routes/productRoutes");
-const editRouter = require("./routes/editRoutes");
 
 app.use("/", homeRouter);
 app.use("/api/navigation", navigationRouter);
 app.use("/api/catogory", catogoryRouter);
 app.use("/api/product", productRouter);
-app.use("/edit/product", editRouter);
 
 mongoose
   .connect(process.env.DB_CONNECTION, {

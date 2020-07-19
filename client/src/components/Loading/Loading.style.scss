@@ -1,0 +1,27 @@
+@import "../../styles/base/variables.scss";
+@import "../../styles/base/responsiveMixin.scss";
+
+.loadingGifContainer {
+  width: 100%;
+  margin: 20px 0;
+
+  // font-size: 50px;
+  i {
+    display: block;
+
+    margin: auto;
+    width: 30px;
+    font-size: 30px;
+
+    animation: ifinityCircles 1.5s infinite linear;
+
+    @keyframes ifinityCircles {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

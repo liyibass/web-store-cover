@@ -4,21 +4,41 @@ import productListTypes from "./productList.type";
 
 const initialState = {
   productList: [],
-  search: "",
+  searchKeyWord: "",
+  loading: false,
+  error: "",
 };
 
 const productListReducer = (state = initialState, action) => {
   switch (action.type) {
-    case productListTypes.SET_PRODUCT_LIST: {
+    case productListTypes.FETCH_PRODUCT_REQUEST: {
       return {
         ...state,
-        productList: action.payload,
-        search: action.search,
+        productList: [],
+        searchKeyWord: "",
+        loading: true,
+        error: "",
       };
     }
 
-    case productListTypes.SET_CATOGORY_PRODUCT_LIST: {
-      return state;
+    case productListTypes.FETCH_PRODUCT_SUCCESS: {
+      return {
+        ...state,
+        productList: action.payload,
+        searchKeyWord: action.searchKeyWord,
+        loading: false,
+        error: "",
+      };
+    }
+
+    case productListTypes.FETCH_PRODUCT_FAILURE: {
+      return {
+        ...state,
+        productList: [],
+        searchKeyWord: action.searchKeyWord,
+        loading: false,
+        error: action.payload,
+      };
     }
 
     default:

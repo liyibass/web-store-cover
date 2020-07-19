@@ -9,14 +9,14 @@ import { fetchResultListFromApi } from "../../redux/productList/productList.acti
 import { useDispatch } from "react-redux";
 
 function SimpleSearch(props) {
-  const [search, setSearch] = useState("");
+  const [searchKeyWord, setSearchKeyWord] = useState("");
   const dispatch = useDispatch();
 
   const handleSearch = (event) => {
     event.preventDefault();
 
-    dispatch(fetchResultListFromApi(search));
-    setSearch("");
+    dispatch(fetchResultListFromApi(searchKeyWord));
+    setSearchKeyWord("");
 
     event.currentTarget.classList.remove("hidingBlock-show");
 
@@ -35,9 +35,9 @@ function SimpleSearch(props) {
       >
         <input
           type="text"
-          value={search}
+          value={searchKeyWord}
           placeholder="請輸入產品"
-          onChange={(event) => setSearch(event.target.value)}
+          onChange={(event) => setSearchKeyWord(event.target.value)}
           // onKeyPress={(e) => {
           //   if (e.key === "Enter") {
           //     handleSearch(e);
